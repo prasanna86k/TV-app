@@ -1,0 +1,42 @@
+TV-App/
+│
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── app.js
+├── data/
+│   └── data.js
+├── images/
+│   ├── background.jpg
+│   └── logo.png
+└── pages/
+    ├── dashboard.html
+    ├── weather.html
+    └── settings.html
+
+
+          DESIGN
+             ↓
+     HTML + CSS + JS
+             ↓
+       Test in Chrome
+             ↓
+    Optimize for TV/D-pad
+             ↓
+       Android WebView
+             ↓
+          Build APK
+             ↓
+       ADB → Google TV
+
+
+Edit HTML/JS
+     ↓
+Upload to GitHub
+     ↓
+Build
+     ↓
+Download APK
+     ↓
+adb install -r app.apk

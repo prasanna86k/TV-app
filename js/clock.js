@@ -13,7 +13,7 @@ function updateClock(){
 
 
     document.getElementById("digitalTime").textContent =
-        `${h}:${m}`;
+        `${h}:${m}:${s}`;
 
 
     // Smooth seconds movement
@@ -34,8 +34,8 @@ function updateClock(){
         Math.sin(angle * Math.PI / 180) * radius;
 
 
-    document.getElementById("secondDot").style.transform =
-        `translate(${x}px, ${y}px)`;
+    // document.getElementById("secondDot").style.transform =
+    //     `translate(${x}px, ${y}px)`;
 
 
     requestAnimationFrame(updateClock);
