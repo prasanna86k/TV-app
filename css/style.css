@@ -34,7 +34,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    width: 60px;
+    width: 8vw;
     height: 80vh;
 
     left: 15px;
@@ -77,8 +77,8 @@ body {
     align-items: center;
     justify-content: center;
 
-    width: 45px;
-    height: 45px;
+    width: 5vw;
+    height: 5vh;
 
     padding: 5px;
 
@@ -227,7 +227,7 @@ body {
 .analog-clock {
 
     /* Adjust circle size here */
-    --clock-size: 200px;
+    --clock-size: 25vw;
 
     width: var(--clock-size);
     height: var(--clock-size);
