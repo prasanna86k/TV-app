@@ -179,7 +179,7 @@ body {
 
     color: white;
 
-    font-size: 20px;
+    font-size: 0px;
     font-weight: 600;
 
     letter-spacing: 2px;
@@ -316,4 +316,48 @@ body {
     0 0 20px rgba(255,255,255,0.2),
     inset 0 0 20px rgba(255,255,255,0.1);
     border-radius: 50px;
+}
+
+
+.clock-date {
+    position: absolute;
+
+    top: 58%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    width: 90%;
+
+    color: white;
+
+    white-space: nowrap;
+
+    z-index: 5;
+}
+
+.clock-date p {
+    margin: 0;
+}
+
+.clock-day {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.clock-date-text {
+    font-size: 15px;
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.clock-date span {
+    font-size: 15px;
+    opacity: 0.5;
 }

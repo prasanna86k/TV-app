@@ -35,24 +35,30 @@
                 <p class="display-6 text-light text-center">Welcome!</p>
 
                 <div class="clock-container mt-4">
+
                     <div class="analog-clock">
-                        <div class="solar-trail" id="solarTrail"></div>
                         <div class="digital-time" id="digitalTime">
                             00:00
                         </div>
-                        <!-- <div class="second-dot" id="secondDot"></div> -->
+
+                        <!-- Day + Date inside clock -->
+                        <div class="clock-date">
+                            <p id="day" class="clock-day"></p>
+                            <span>|</span>
+                            <p id="date" class="clock-date-text"></p>
+                        </div>
+
                     </div>
+
                 </div>
-                <div class="date-box mt-3">
-                    <p id="day" class="fs-4 fw-semibold"></p>
-                    <span>|</span>
-                    <p id="date" class="fs-5 fw-light"></p>
-                </div>
-                
-                <div  class="date-box mt-2 slTime p-3">
-                    <p class="fs-6 fw-semibold"> SL Time</p> <Span> - </Span>
-                    <p id="slTime" class="fs-6 fw-light text-light">2:30 PM</p>
-                    
+
+                <!-- Sri Lanka time can remain outside -->
+                <div class="date-box mt-2 slTime p-3">
+                    <p class="fs-6 fw-semibold">SL Time</p>
+                    <span>-</span>
+                    <p id="slTime" class="fs-6 fw-light text-light">
+                        2:30 PM
+                    </p>
                 </div>
             </div>
 
