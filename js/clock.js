@@ -1,45 +1,41 @@
-const clockSize = 365; // same as CSS circle size
-const radius = (clockSize / 2) - 8;
-
-
-function updateClock(){
+function updateClock() {
 
     const now = new Date();
 
 
-    let h = String(now.getHours()).padStart(2,'0');
-    let m = String(now.getMinutes()).padStart(2,'0');
-    let s = String(now.getSeconds()).padStart(2,'0');
+    // =============================
+    // LOCAL TIME - AM/PM
+    // =============================
 
+    const localTime = now.toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: true
+    });
 
     document.getElementById("digitalTime").textContent =
-        `${h}:${m}:${s}`;
+        localTime;
 
 
-    // Smooth seconds movement
+    // =============================
+    // SRI LANKA TIME - AM/PM
+    // =============================
 
-    const milliseconds = now.getMilliseconds();
+    const sriLankaTime = now.toLocaleTimeString("en-US", {
+        timeZone: "Asia/Colombo",
+        hour: "numeric",
+        minute: "2-digit",
+        hour12: true
+    });
 
-    const seconds =
-        now.getSeconds() + milliseconds / 1000;
-
-
-    const angle = seconds * 6 - 90;
-
-
-    const x =
-        Math.cos(angle * Math.PI / 180) * radius;
-
-    const y =
-        Math.sin(angle * Math.PI / 180) * radius;
+    document.getElementById("slTime").textContent =
+        `${sriLankaTime}`;
 
 
-    // document.getElementById("secondDot").style.transform =
-    //     `translate(${x}px, ${y}px)`;
-
-
-    requestAnimationFrame(updateClock);
+    // Update every second
+    setTimeout(updateClock, 1000);
 }
 
 
-updateClock();
+updateClock();S
