@@ -1,41 +1,100 @@
-function updateClock() {
+/*
+ * Dynamic greeting
+ */
 
-    const now = new Date();
+const currentHour = new Date().getHours();
 
+let greeting;
 
-    // =============================
-    // LOCAL TIME - AM/PM
-    // =============================
+if (currentHour >= 5 && currentHour < 12) {
 
-    const localTime = now.toLocaleTimeString("en-US", {
-        hour: "numeric",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-    });
+    greeting = "Good Morning";
 
-    document.getElementById("digitalTime").textContent =
-        localTime;
+} else if (currentHour >= 12 && currentHour < 17) {
 
+    greeting = "Good Afternoon";
 
-    // =============================
-    // SRI LANKA TIME - AM/PM
-    // =============================
+} else if (currentHour >= 17 && currentHour < 21) {
 
-    const sriLankaTime = now.toLocaleTimeString("en-US", {
-        timeZone: "Asia/Colombo",
-        hour: "numeric",
-        minute: "2-digit",
-        hour12: true
-    });
+    greeting = "Good Evening";
 
-    document.getElementById("slTime").textContent =
-        `${sriLankaTime}`;
+} else {
 
-
-    // Update every second
-    setTimeout(updateClock, 1000);
+    greeting = "Good Night";
 }
 
 
-updateClock();S
+if (greetingText) {
+
+    greetingText.textContent = greeting;
+
+}
+
+//Local clock
+function updateLocalClock() {
+    const now = new Date();
+
+    // Time — HH:MM
+    const time = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+    });
+
+    // Day — Sunday
+    const day = now.toLocaleDateString("en-US", {
+        weekday: "long"
+    });
+
+    // Date — 09 August 2026
+    const date = now.toLocaleDateString("en-US", {
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+
+    // Update HTML
+    document.getElementById("localTime").textContent = time;
+    document.getElementById("localDay").textContent = day;
+    document.getElementById("localDate").textContent = date;
+}
+
+// Run immediately
+updateLocalClock();
+
+// Update every minute
+setInterval(updateLocalClock, 60000);
+
+//-----------------------------------
+
+//Sri Lanka Time
+function updateSLClock() {
+    const now = new Date();
+
+    // Sri Lanka time — 12-hour format with AM/PM
+    const slTime = now.toLocaleTimeString("en-US", {
+        timeZone: "Asia/Colombo",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true
+    });
+
+    // Sri Lanka day and date
+    const slDate = now.toLocaleDateString("en-US", {
+        timeZone: "Asia/Colombo",
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+    });
+
+    // Update HTML
+    document.getElementById("slTime").textContent = slTime;
+    document.getElementById("slDate").textContent = slDate.replace(",", " ·");
+}
+
+// Run immediately
+updateSLClock();
+
+// Update every minute
+setInterval(updateSLClock, 60000);

@@ -1,0 +1,618 @@
+/* ============================================================
+   TV DASHBOARD
+   Virtual Design Resolution: 1920 × 1080
+   ============================================================ */
+
+:root {
+
+    /* Virtual design resolution */
+    --design-width: 1920;
+    --design-height: 1080;
+
+    /* Dashboard */
+    --page-padding: 40px;
+    --card-gap: 24px;
+
+    /* Visual */
+    --card-radius: 28px;
+
+    /* Colors */
+    --background: #080b12;
+    --card-background: rgba(255, 255, 255, 0.055);
+    --card-border: rgba(255, 255, 255, 0.09);
+
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.65);
+    --text-muted: rgba(255, 255, 255, 0.40);
+
+    --navbar-space: 110px;
+}
+
+
+/* ============================================================
+   RESET
+   ============================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #000;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    color: var(--text-primary);
+}
+
+
+/* ============================================================
+   VIEWPORT
+   ============================================================ */
+
+#tv-viewport {
+
+    position: fixed;
+
+    inset: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    overflow: hidden;
+
+    background: #767676;
+}
+
+
+/* ============================================================
+   VIRTUAL TV SCREEN
+   ============================================================ */
+
+#tv-screen {
+    position: absolute;
+
+    width: 1920px;
+    height: 1080px;
+
+    /*
+     * IMPORTANT:
+     * JavaScript controls the final position.
+     */
+    left: 0;
+    top: 0;
+
+    transform-origin: top left;
+
+    background:
+        radial-gradient(
+            circle at 75% 20%,
+            rgba(40, 80, 160, 0.16),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 15% 80%,
+            rgba(30, 120, 180, 0.10),
+            transparent 35%
+        ),
+        var(--background);
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+
+.dashboard-header {
+    height: 110px;
+    padding:
+        30px
+        var(--page-padding);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.brand-title {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+
+.brand-subtitle {
+    margin-top: 4px;
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+}
+
+
+.header-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: var(--text-secondary);
+}
+
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #43e97b;
+    box-shadow:
+        0 0 15px rgba(67, 233, 123, 0.8);
+}
+
+
+/* ============================================================
+   MAIN CONTENT
+   ============================================================ */
+
+.dashboard-content {
+    height: 890px;
+    padding:
+        0
+        var(--page-padding);
+
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    gap: var(--card-gap);
+     margin-left: var(--navbar-space);
+    
+}
+
+
+/* ============================================================
+   COLUMNS
+   ============================================================ */
+
+.left-column,
+.right-column {
+
+    min-width: 0;
+    min-height: 0;
+
+    display: grid;
+
+    gap: var(--card-gap);
+}
+
+
+.left-column {
+
+    grid-template-rows:
+        330px
+        180px
+        1fr;
+}
+
+
+.right-column {
+
+    grid-template-rows:
+        180px
+        330px
+        1fr;
+}
+
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+
+.dashboard-card {
+
+    position: relative;
+
+    min-width: 0;
+    min-height: 0;
+
+    padding: 32px;
+
+    border-radius: var(--card-radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.025)
+        );
+
+    border: 1px solid var(--card-border);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(20px);
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   CARD LABEL
+   ============================================================ */
+
+.card-label {
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    color: var(--text-muted);
+
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   LOCAL CLOCK
+   ============================================================ */
+
+.clock-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.clock-time {
+    margin-top: 20px;
+    font-size: 86px;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: 3px;
+    font-variant-numeric: tabular-nums;
+}
+
+
+.clock-day {
+    margin-top: 24px;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+
+.clock-date {
+    margin-top: 8px;
+    font-size: 18px;
+    color: var(--text-secondary);
+}
+
+
+/* ============================================================
+   SRI LANKA TIME
+   ============================================================ */
+
+.sl-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.secondary-time {
+    font-size: 52px;
+    font-weight: 300;
+    font-variant-numeric: tabular-nums;
+}
+
+
+.secondary-date {
+    font-size: 17px;
+    color: var(--text-secondary);
+}
+
+
+/* ============================================================
+   BIRTHDAYS
+   ============================================================ */
+
+.birthday-list {
+
+    margin-top: 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.birthday-item {
+
+    min-height: 58px;
+
+    padding: 10px 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-radius: 14px;
+
+    background: rgba(255,255,255,0.035);
+}
+
+
+.birthday-item strong {
+
+    display: block;
+
+    font-size: 18px;
+}
+
+
+.birthday-item small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    font-size: 13px;
+
+    color: var(--text-muted);
+}
+
+
+.birthday-item > span {
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+}
+
+
+/* ============================================================
+   WEATHER
+   ============================================================ */
+
+.weather-card {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.weather-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+.weather-icon {
+
+    font-size: 70px;
+}
+
+
+.temperature {
+
+    font-size: 64px;
+
+    font-weight: 300;
+
+    line-height: 1;
+}
+
+
+.weather-description {
+
+    margin-top: 8px;
+
+    font-size: 17px;
+
+    color: var(--text-secondary);
+}
+
+
+/* ============================================================
+   TODAY
+   ============================================================ */
+
+.today-content {
+
+    height: calc(100% - 40px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+}
+
+
+.today-day {
+
+    font-size: 30px;
+
+    color: var(--text-secondary);
+}
+
+
+.today-date {
+
+    margin-top: 5px;
+
+    font-size: 150px;
+
+    line-height: 0.9;
+
+    font-weight: 200;
+}
+
+
+.today-month {
+
+    margin-top: 15px;
+
+    font-size: 22px;
+
+    letter-spacing: 5px;
+
+    color: var(--text-secondary);
+}
+
+
+/* ============================================================
+   MEDIA
+   ============================================================ */
+
+.media-card {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.media-placeholder {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    font-size: 18px;
+
+    color: var(--text-muted);
+}
+
+
+.media-icon {
+
+    width: 70px;
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+
+    font-size: 25px;
+}
+
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+.dashboard-footer {
+
+    position: absolute;
+
+    bottom: 0;
+
+    left: 0;
+
+    right: 0;
+
+    height: 80px;
+
+    padding:
+        0
+        var(--page-padding);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    letter-spacing: 1px;
+}
+
+
+/* ============================================================
+   DEVELOPMENT MODE
+   ============================================================ */
+
+body.development #tv-screen {
+
+    outline: 2px solid rgba(255,255,255,0.25);
+
+    box-shadow:
+        0 0 80px rgba(0,0,0,0.8);
+}
+
+
+/* ============================================================
+   TV PERFORMANCE
+   ============================================================ */
+
+.dashboard-card {
+
+    will-change: auto;
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
