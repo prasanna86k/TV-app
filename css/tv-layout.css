@@ -278,6 +278,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: );
 }
 
 
@@ -293,14 +294,14 @@ body {
 
 .clock-day {
     margin-top: 24px;
-    font-size: 28px;
+    font-size: 36px;
     font-weight: 500;
 }
 
 
 .clock-date {
-    margin-top: 8px;
-    font-size: 18px;
+    margin-top: 4px;
+    font-size: 24px;
     color: var(--text-secondary);
 }
 
@@ -396,21 +397,15 @@ body {
    ============================================================ */
 
 .weather-card {
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 }
 
 
 .weather-content {
-
     display: flex;
-
     align-items: center;
-
     gap: 30px;
 }
 
@@ -422,21 +417,15 @@ body {
 
 
 .temperature {
-
     font-size: 64px;
-
     font-weight: 300;
-
     line-height: 1;
 }
 
 
 .weather-description {
-
     margin-top: 8px;
-
     font-size: 17px;
-
     color: var(--text-secondary);
 }
 

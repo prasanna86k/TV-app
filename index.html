@@ -14,6 +14,7 @@
 
     <link rel="stylesheet" href="css/tv-layout.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/weather.css">
 </head>
 
 <body>
@@ -168,26 +169,75 @@
                 <div class="right-column">
 
                     <!-- WEATHER -->
+                    <!-- WEATHER -->
                     <section class="dashboard-card weather-card">
 
                         <div class="card-label">
-                            WEATHER
+                            Today  
+                            <span id="weatherLocation">DOHA</span>
                         </div>
 
-                        <div class="weather-content">
+                        <!-- CURRENT WEATHER -->
+                        <div class="weather-current">
 
-                            <div class="weather-icon">
-                                ☀
+                            <div class="weather-main">
+
+                                <div id="weatherIcon" class="weather-icon">
+                                    ☀
+                                </div>
+
+                                <div class="weather-temperature">
+                                    <span id="weatherTemperature">--</span>
+                                    <span class="temperature-unit">°C</span>
+                                </div>
+
+                                <div id="weatherDescription" class="weather-description">
+                                    Loading...
+                                </div>
+
                             </div>
 
-                            <div>
-                                <div class="temperature">
-                                    32°
+
+                            <div class="weather-details">
+
+                                <div class="weather-detail">
+                                    <i class="bi bi-thermometer-half"></i>
+                                    <span>
+                                        Feels like
+                                        <strong id="weatherFeelsLike">--°</strong>
+                                    </span>
                                 </div>
 
-                                <div class="weather-description">
-                                    Clear sky
+                                <div class="weather-detail">
+                                    <i class="bi bi-droplet-fill"></i>
+                                    <span>
+                                        Humidity
+                                        <strong id="weatherHumidity">--%</strong>
+                                    </span>
                                 </div>
+
+                                <div class="weather-detail">
+                                    <i class="bi bi-wind"></i>
+                                    <span>
+                                        Wind
+                                        <strong id="weatherWind">-- km/h</strong>
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- HOURLY FORECAST -->
+                        <div class="hourly-title">
+                            HOURLY FORECAST
+                        </div>
+
+                        <div id="hourlyForecast" class="hourly-forecast">
+
+                            <div class="weather-loading">
+                                Loading weather...
                             </div>
 
                         </div>
@@ -248,7 +298,7 @@
                 </div>
 
                 <div>
-                    Version: 1.0
+                    Version: 1.1
                 </div>
 
                 <div id="screenInfo">
@@ -268,6 +318,7 @@
 
     <script src="js/tv-layout.js"></script>
     <script src="js/clock.js"></script>
+    <script src="js/weather.js"></script>
 
 </body>
 
