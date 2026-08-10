@@ -4,6 +4,7 @@
 
 .weather-card {
     overflow: hidden;
+    padding: 10px;
 }
 
 
@@ -146,7 +147,7 @@
     margin-top: 18px;
     margin-bottom: 8px;
 
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
 
     letter-spacing: 1.5px;
@@ -157,11 +158,8 @@
 
 .hourly-forecast {
     display: flex;
-
     width: 100%;
-
-    gap: 7px;
-
+    gap: 10px;
     overflow: hidden;
 }
 
@@ -170,17 +168,11 @@
 
 .hourly-item {
     flex: 1;
-
     min-width: 55px;
-
-    padding: 8px 5px;
-
+    padding: 5px 5px;
     text-align: center;
-
     border-radius: 12px;
-
     background: rgba(255, 255, 255, 0.04);
-
     transition: background 0.2s ease;
 }
 
@@ -193,11 +185,9 @@
 /* Hour */
 
 .hourly-time {
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
-
     opacity: 0.6;
-
     white-space: nowrap;
 }
 
@@ -207,15 +197,15 @@
 .hourly-icon {
     margin: 5px 0;
 
-    font-size: 22px;
+    font-size: 30px;
 }
 
 
 /* Temperature */
 
 .hourly-temperature {
-    font-size: 14px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 200;
 }
 
 
@@ -223,9 +213,7 @@
 
 .hourly-rain {
     margin-top: 3px;
-
-    font-size: 9px;
-
+    font-size: 12px;
     opacity: 0.5;
 }
 
