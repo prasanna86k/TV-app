@@ -104,3 +104,264 @@
         0 0 0 3px rgba(255, 255, 255, 0.25),
         0 8px 20px rgba(0, 0, 0, 0.25);
 }
+
+
+
+/* 
+/\* ============================================================
+BIRTHDAYS
+\============================================================ \*/ 
+
+.birthday-list {
+margin-top: 20px;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+
+.birthday-item {
+min-height: 58px;
+padding: 10px 16px;
+
+
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+border-radius: 14px;
+background: rgba(255,255,255,0.035);
+
+
+}
+
+.birthday-person {
+display: flex;
+align-items: center;
+gap: 12px;
+}
+
+.birthday-photo {
+width: 42px;
+height: 42px;
+
+border-radius: 50%;
+object-fit: cover;
+
+flex-shrink: 0;
+
+border: 1px solid rgba(255,255,255,0.08);
+
+
+}
+
+.birthday-info strong {
+display: block;
+font-size: 18px;
+}
+
+.birthday-info small {
+display: block;
+margin-top: 3px;
+font-size: 13px;
+color: var(--text-muted);
+}
+
+.birthday-item > span {
+font-size: 13px;
+color: var(--text-secondary);
+}
+
+
+
+.birthday-item {
+cursor: pointer;
+transition:
+background 0.2s ease,
+transform 0.2s ease;
+}
+
+.birthday-item:hover {
+background: rgba(255,255,255,0.065);
+transform: translateY(-1px);
+}
+
+/* /\* Modal background \*/ 
+
+.birthday-modal {
+position: fixed;
+inset: 0;
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 20px;
+
+background: rgba(0, 0, 0, 0.65);
+
+backdrop-filter: blur(8px);
+-webkit-backdrop-filter: blur(8px);
+
+opacity: 0;
+visibility: hidden;
+
+transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease;
+
+z-index: 9999;
+
+}
+
+/* /\* Show modal \*/ 
+
+.birthday-modal.active {
+opacity: 1;
+visibility: visible;
+}
+
+/* /\* Modal box \*/ 
+
+.birthday-modal-content {
+position: relative;
+width: min(360px, 100%);
+padding: 30px 25px;
+text-align: center;
+border-radius: 24px;
+background: rgba(25, 25, 30, 0.95);
+border: 1px solid rgba(255,255,255,0.08);
+box-shadow:
+0 25px 70px rgba(0,0,0,0.45);
+transform: translateY(15px) scale(0.97);
+transition: transform 0.2s ease;
+}
+
+.birthday-modal.active .birthday-modal-content {
+transform: translateY(0) scale(1);
+}
+
+/* /\* Large circular photo \*/ 
+
+.birthday-modal-photo {
+width: 120px;
+height: 120px;
+object-fit: cover;
+border-radius: 30%;
+border: 3px solid rgba(255,255,255,0.1);
+box-shadow:
+0 8px 30px rgba(0,0,0,0.35);
+margin-bottom: 18px;
+}
+
+/* /\* Name \*/ 
+
+.birthday-modal-name {
+font-size: 26px;
+font-weight: 600;
+
+
+color: var(--text-primary);
+
+}
+
+/* /\* Full birthday \*/ 
+
+.birthday-modal-date {
+margin-top: 7px;
+font-size: 14px;
+color: var(--text-muted);
+}
+
+/* /\* Age \*/ 
+
+.birthday-modal-age {
+margin-top: 18px;
+font-size: 20px;
+font-weight: 500;
+
+
+color: var(--text-primary);
+
+
+}
+
+/* \* Countdown \*/ 
+
+.birthday-modal-countdown {
+margin-top: 6px;
+font-size: 14px;
+color: var(--text-secondary);
+}
+
+/* /\* Close button \*/ 
+
+.birthday-modal-close {
+position: absolute;
+
+
+top: 12px;
+right: 14px;
+
+width: 34px;
+height: 34px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+border: none;
+border-radius: 50%;
+
+background: rgba(255,255,255,0.06);
+
+color: var(--text-secondary);
+
+font-size: 24px;
+line-height: 1;
+
+cursor: pointer;
+
+transition:
+    background 0.2s ease,
+    color 0.2s ease;
+
+
+}
+
+.birthday-modal-close:hover {
+background: rgba(255,255,255,0.12);
+color: var(--text-primary);
+}
+
+.birthday-item.today-birthday {
+background: rgba(7, 243, 255, 0.12);
+border: 1px solid rgba(7, 255, 255, 0.28);
+}
+
+.birthday-item.today-birthday:hover {
+background: rgba(7, 247, 255, 0.18);
+}
+
+.birthday-item.today-birthday > span {
+color: #07e2ff;
+font-weight: 600;
+}
+
+.birthday-empty {
+min-height: 58px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 10px 16px;
+
+border-radius: 14px;
+
+background: rgba(255,255,255,0.025);
+
+color: var(--text-muted);
+
+font-size: 14px;
+
+
+}

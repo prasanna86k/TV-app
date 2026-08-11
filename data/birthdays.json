@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Nethsiha Venuditha",
+        "date": "2020-09-11",
+        "photo": "./images/photo/venuditha.jpg"
+    },
+    {
+        "name": "Nethmini Harindi",
+        "date": "1989-04-23",
+        "photo": "./images/photo/nethmini.jpg"
+    },
+    {
+        "name": "Prasanna Karunarathna",
+        "date": "1986-11-04",
+        "photo": "./images/photo/prasanna.jpg"
+    },
+    {
+        "name": "Test User",
+        "date": "1988-08-11",
+        "photo": "./images/photo/test.jpg"
+    }
+]

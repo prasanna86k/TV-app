@@ -132,35 +132,22 @@
                             UPCOMING BIRTHDAYS
                         </div>
 
-                        <div class="birthday-list">
-
-                            <div class="birthday-item">
-                                <div>
-                                    <strong>John</strong>
-                                    <small>12 August</small>
-                                </div>
-                                <span>3 days</span>
-                            </div>
-
-                            <div class="birthday-item">
-                                <div>
-                                    <strong>Sarah</strong>
-                                    <small>21 August</small>
-                                </div>
-                                <span>12 days</span>
-                            </div>
-
-                            <div class="birthday-item">
-                                <div>
-                                    <strong>David</strong>
-                                    <small>02 September</small>
-                                </div>
-                                <span>24 days</span>
-                            </div>
-
-                        </div>
+                        <div class="birthday-list" id="birthdayList">
+                            <!-- Birthday items loaded from ./data/birthdays.json --> </div>
 
                     </section>
+
+                    <!-- Birthday Details Modal -->
+                    <div class="birthday-modal" id="birthdayModal">
+                        <div class="birthday-modal-content"> <button class="birthday-modal-close"
+                                id="birthdayModalClose"> &times; </button> <img class="birthday-modal-photo"
+                                id="birthdayModalPhoto" src="" alt="">
+                            <div class="birthday-modal-name" id="birthdayModalName"></div>
+                            <div class="birthday-modal-date" id="birthdayModalDate"></div>
+                            <div class="birthday-modal-age" id="birthdayModalAge"></div>
+                            <div class="birthday-modal-countdown" id="birthdayModalCountdown"></div>
+                        </div>
+                    </div>
 
                 </div>
 
@@ -173,7 +160,7 @@
                     <section class="dashboard-card weather-card">
 
                         <div class="card-label">
-                            Today  
+                            Today
                             <span id="weatherLocation">DOHA</span>
                         </div>
 
@@ -298,7 +285,7 @@
                 </div>
 
                 <div>
-                    Version: 1.2
+                    Version: 1.3
                 </div>
 
                 <div id="screenInfo">
@@ -319,6 +306,7 @@
     <script src="js/tv-layout.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/weather.js"></script>
+    <script src="js/birthdays.js"></script>
 
 </body>
 
